@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Min Nettside</title>
+
+  <style>
+    /* --- GENERELT --- */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #b08968; /* lun brunfarge */
+      color: #3a2f24;
+      line-height: 1.6;
+    }
+
+    /* --- HEADER --- */
+    header {
+      background: #7f5539;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      box-shadow: 0px 3px 10px rgba(0,0,0,0.2);
+    }
+
+    header a {
+      color: #f2e9e4;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1rem;
+      padding: 8px 14px;
+      border-radius: 6px;
+      transition: 0.2s;
+    }
+
+    header a:hover {
+      background: #9c6644;
+    }
+
+    /* --- INNHOLD --- */
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .image-box {
+      background: #e6ccb2;
+      padding: 15px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      margin-bottom: 40px;
+      text-align: center;
+    }
+
+    .image-box img {
+      width: 100%;
+      max-height: 350px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .image-box p {
+      margin-top: 15px;
+      font-size: 1.05rem;
+      color: #3c2f2f;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <a href="#">Knapp1</a>
+    <a href="#">Knapp2</a>
+    <a href="#">Knapp3</a>
+  </header>
+
+  <!-- HOVEDINNHOLD -->
+  <div class="container">
+
+    <div class="image-box">
+      <img src="image0.jpeg" alt="Bilde1">
+      <p>Dette er teksten mellom bilde 1 og bilde 2.</p>
+    </div>
+
+    <div class="image-box">
+      <img src="image1.jpeg" alt="Bilde2">
+      <p>Dette er teksten mellom bilde 2 og bilde 3.</p>
+    </div>
+
+    <div class="image-box">
+      <img src="image3.jpeg" alt="Bilde3">
+      <p>Dette er teksten mellom bilde 3 og bilde 4.</p>
+    </div>
+
+    <div class="image-box">
+      <img src="image4.jpeg" alt="Bilde4">
+      <p>Dette er teksten mellom bilde 4 og bilde 5.</p>
+    </div>
+
+    <div class="image-box">
+      <img src="image5.jpeg" alt="Bilde5">
+      <p>Dette er teksten mellom bilde 5 og bilde 6.</p>
+    </div>
+
+    <div class="image-box">
+      <img src="image8.jpeg" alt="Bilde6">
+      <p>Dette er teksten etter bilde 6.</p>
+    </div>
+
+  </div>
+
+</body>
+</html>
