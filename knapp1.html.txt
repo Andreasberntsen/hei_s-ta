@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Knapp1 – Underside</title>
+
+  <!-- Samme stilark -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+  <!-- Samme header -->
+  <header>
+    <a href="index.html">Hjem</a>
+    <a href="knapp1.html">Knapp1</a>
+    <a href="knapp2.html">Knapp2</a>
+    <a href="knapp3.html">Knapp3</a>
+  </header>
+
+  <!-- Du kan velge om du vil ha sidebar her også -->
+  <div class="container">
+    <div class="content-box">
+      <h1>Side for Knapp1</h1>
+      <p>
+        Her kan du skrive mer detaljert info, legge inn flere bilder,
+        historier, prosjekter eller hva du vil.
+      </p>
+      <p>
+        Siden bruker samme bakgrunn, header, fonter og layout som forsiden
+        fordi den deler <strong>styles.css</strong>.
+      </p>
+    </div>
+  </div>
+
+</body>
+</html>
