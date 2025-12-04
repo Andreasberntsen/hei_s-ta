@@ -1,4 +1,10 @@
-/* --- GENERELT --- */
+/* --- RESET / BASIS --- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -13,30 +19,36 @@ header {
   padding: 15px 20px;
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 30px;
+  flex-wrap: wrap; /* gjør at linkene kan bryte linje på små skjermer */
   box-shadow: 0px 3px 10px rgba(0,0,0,0.2);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 header a {
   color: #f2e9e4;
   text-decoration: none;
   font-weight: bold;
-  font-size: 1.1rem;
+  font-size: 1rem;
   padding: 8px 14px;
   border-radius: 6px;
-  transition: 0.2s;
+  transition: background 0.2s, transform 0.15s;
 }
 
 header a:hover {
   background: #9c6644;
+  transform: translateY(-1px);
 }
 
 /* --- SIDEBAR FUNFACTS --- */
 .sidebar {
   position: fixed;
   top: 120px;
-  left: 20px;
-  width: 220px;
+  left: 10px;
+  width: 210px;
   background: #d4a373;
   padding: 20px;
   border-radius: 12px;
@@ -47,7 +59,7 @@ header a:hover {
 
 .sidebar h2 {
   margin-top: 0;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
 }
 
 .sidebar p {
@@ -61,7 +73,7 @@ header a:hover {
   max-width: 900px;
   margin: 40px auto;
   padding: 0 20px;
-  margin-left: 260px; /* plass til sidebar */
+  margin-left: 260px; /* plass til sidebar på større skjermer */
 }
 
 .image-box {
@@ -71,17 +83,24 @@ header a:hover {
   box-shadow: 0 7px 20px rgba(0,0,0,0.15);
   margin-bottom: 40px;
   text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.image-box:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.18);
 }
 
 .image-box img {
   width: 100%;
+  height: auto;
   max-height: 700px;
   object-fit: cover;
   border-radius: 20px;
 }
 
 .image-box p {
-  margin-top: 30px;
+  margin-top: 20px;
   font-size: 1.05rem;
   color: #3c2f2f;
 }
@@ -93,4 +112,82 @@ header a:hover {
   border-radius: 12px;
   box-shadow: 0 7px 20px rgba(0,0,0,0.15);
   margin-bottom: 40px;
+}
+
+/* --- RESPONSIVE TILPASNINGER --- */
+
+/* Mellomstore skjermer (nettbrett osv.) */
+@media (max-width: 1024px) {
+  .container {
+    margin-left: 230px; /* litt mindre plass til sidebar */
+  }
+
+  .sidebar {
+    top: 110px;
+    width: 190px;
+  }
+}
+
+/* Små skjermer (mobil) */
+@media (max-width: 768px) {
+  header {
+    justify-content: center;
+    gap: 10px;
+    padding: 10px 12px;
+  }
+
+  header a {
+    font-size: 0.95rem;
+    padding: 6px 10px;
+  }
+
+  /* Sidebar flyttes inn i innholdet og slutter å være "fixed" */
+  .sidebar {
+    position: static;
+    width: auto;
+    margin: 20px 20px 0 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  }
+
+  .container {
+    margin: 20px auto;
+    padding: 0 15px;
+    margin-left: 0; /* ingen ekstra margin på mobil */
+  }
+
+  .image-box,
+  .content-box {
+    margin-bottom: 25px;
+    padding: 15px;
+  }
+
+  .image-box p,
+  .content-box {
+    font-size: 0.95rem;
+  }
+
+  body {
+    font-size: 0.95rem;
+  }
+}
+
+/* Ekstra små skjermer (f.eks. veldig små mobiler) */
+@media (max-width: 480px) {
+  header {
+    flex-direction: column;
+  }
+
+  header a {
+    width: 100%;
+    text-align: center;
+  }
+
+  .sidebar {
+    margin: 15px;
+    padding: 15px;
+  }
+
+  .image-box img {
+    border-radius: 12px;
+  }
 }
